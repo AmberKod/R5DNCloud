@@ -1,0 +1,24 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net8.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <PackageReference Include="Swashbuckle.AspNetCore" Version="6.6.1" />
+      <PackageReference Include="Unchase.Swashbuckle.AspNetCore.Extensions" Version="2.7.1" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\..\R5DNCloud.Infrastructure\R5DNCloud.Infrastructure.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <EmbeddedResource Include="Resources\dvs-swagger.css" />
+        <EmbeddedResource Include="Resources\dvs-swagger.js" />
+        <EmbeddedResource Include="Resources\dvs-swagger.html" />
+    </ItemGroup>
+
+</Project>
