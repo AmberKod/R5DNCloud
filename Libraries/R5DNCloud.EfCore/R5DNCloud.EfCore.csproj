@@ -11,8 +11,10 @@
       <PackageReference Include="Ardalis.Specification.EntityFrameworkCore" Version="8.0.0" />
       <PackageReference Include="AutoMapper" Version="13.0.1" />
       <PackageReference Include="LinqKit.Core" Version="1.2.5" />
+      <PackageReference Include="Pomelo.EntityFrameworkCore.MySql" Version="8.0.2" />
       <PackageReference Include="X.PagedList" Version="9.1.2" />
       <PackageReference Include="X.PagedList.EF" Version="9.1.2" />
+      <PackageReference Include="Z.EntityFramework.Extensions.EFCore" Version="8.102.2.4" />
     </ItemGroup>
 
     <ItemGroup>

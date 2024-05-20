@@ -11,9 +11,17 @@
     </ItemGroup>
 
     <ItemGroup>
+      <ProjectReference Include="..\Libraries\R5DNCloud.EfCore\R5DNCloud.EfCore.csproj" />
+      <ProjectReference Include="..\Libraries\R5DNCloud.RabbitMQ\R5DNCloud.RabbitMQ.csproj" />
       <ProjectReference Include="..\Libraries\R5DNCloud.Redis\R5DNCloud.Redis.csproj" />
+      <ProjectReference Include="..\Libraries\R5DNCloud.Serilog\R5DNCloud.Serilog.csproj" />
       <ProjectReference Include="..\Libraries\R5DNCloud.Swagger\R5DNCloud.Swagger.csproj" />
       <ProjectReference Include="..\Libraries\R5DNCloud.Excel\R5DNCloud.Excel.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="AgileConfig.Client" Version="1.7.3" />
+      <PackageReference Include="Cronos" Version="0.8.4" />
     </ItemGroup>
 
 </Project>

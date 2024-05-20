@@ -5,5 +5,23 @@ namespace R5DNCloud.EfCore.Entities;
 /// </summary>
 public interface IAuditedEntity
 {
+    /// <summary>
+    /// 创建时间
+    /// </summary>
+    DateTime CreatedAt { get; set; }
     
+    /// <summary>
+    /// 创建人id
+    /// </summary>
+    long? CreatedBy { get; set; }
+    
+    /// <summary>
+    /// 修改时间
+    /// </summary>
+    DateTime UpdatedAt { get; set; }
+    
+    /// <summary>
+    /// 修改人id
+    /// </summary>
+    long? UpdatedBy { get; set; }
 }

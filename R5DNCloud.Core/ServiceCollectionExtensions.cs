@@ -1,7 +1,9 @@
 ﻿using System.Reflection;
 using System.Runtime.Loader;
+using AutoMapper;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Diagnostics;
+using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.StaticFiles;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Configuration.Json;
@@ -11,9 +13,17 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Options;
 using OfficeOpenXml;
 using R5DNCloud.Core.Authentication;
+using R5DNCloud.Core.Filters;
+using R5DNCloud.Core.HostedServices;
+using R5DNCloud.Core.Schedule;
+using R5DNCloud.EfCore;
 using R5DNCloud.Infrastructure;
 using R5DNCloud.Infrastructure.Converters;
+using R5DNCloud.Infrastructure.Options;
+using R5DNCloud.Infrastructure.Utils;
+using R5DNCloud.RabbitMQ;
 using R5DNCloud.Redis;
+using R5DNCloud.Serilog;
 using R5DNCloud.Swagger;
 
 namespace R5DNCloud.Core;
@@ -282,7 +292,7 @@ public static partial class ServiceCollectionExtensions
 
         foreach (var optionType in types)
         {
-            var instance = (IOptions<>)Activator.CreateInstance(optionType);
+            var instance = (IOptions)Activator.CreateInstance(optionType);
 
             IConfiguration section = instance.SectionName.IsNullOrEmpty() ? configuration : configuration.GetSection(instance.SectionName);
             MethodInfo extensionMethod = configureExtension.MakeGenericMethod(optionType);
